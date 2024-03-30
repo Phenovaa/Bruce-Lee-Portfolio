@@ -1,0 +1,280 @@
+header nav {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  height: 50px;
+  border-top: solid 10px #ffc300;
+  border-right: solid 0px #ffc300;
+  border-bottom: solid 10px #ffc300;
+  border-left: solid 0px #ffc300;
+}
+header nav .logo img {
+  max-width: 100px;
+  height: auto;
+  vertical-align: middle;
+}
+header nav ul {
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+header nav ul li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+header nav ul li a:hover {
+  background-color: #ffc300;
+  border-radius: 10px;
+}
+
+footer {
+  background-color: #001427;
+  color: white;
+  padding: 5px;
+  text-align: center;
+}
+footer p {
+  font-size: 14px;
+}
+
+body {
+  margin: 0;
+  font-family: "Protest Riot", sans-serif;
+  color: black;
+  background-color: #ffd60a;
+}
+body .mini-nav {
+  height: 25px;
+  width: 100%;
+}
+body .mini-nav p {
+  margin: 10px;
+  padding: 0;
+}
+@media only screen and (max-width: 767px) {
+  body header nav {
+    height: auto;
+    padding: 10px 0;
+    flex-direction: column;
+    align-items: center;
+  }
+  body header nav .logo {
+    margin-bottom: 10px;
+  }
+  body header nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  body header nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  body header nav {
+    padding: 15px 0;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  body header nav {
+    padding: 20px 0;
+  }
+  body header nav ul {
+    justify-content: flex-end;
+  }
+}
+
+main .profiel .content .bruce-lee-name {
+  font-size: 38px;
+}
+main .profiel {
+  background-color: #ffd60a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+  background-image: url(Image/thunder.png);
+  background-size: cover;
+}
+main .profiel .bruceleeprofiel {
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+  margin-top: 20px;
+  margin-right: 0;
+  margin-bottom: 20px;
+  border: solid 10px transparent;
+  position: relative;
+  overflow: hidden;
+  animation: pulseBorder 1.5s infinite alternate;
+}
+@keyframes pulseBorder {
+  0% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: white;
+  }
+}
+main .profiel .content {
+  text-align: center;
+}
+main .profiel .content h1,
+main .profiel .content p {
+  margin: 0;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  line-height: 1.6;
+  text-shadow: 2px 2px white;
+  font-size: 18px;
+}
+main .profiel .content button {
+  margin: 5px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: white;
+  width: 150px;
+  color: black;
+  border-color: 10px solid #001427;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 5px;
+  font-family: "Protest Riot", sans-serif;
+  cursor: pointer;
+}
+main .profiel .content button:hover {
+  background-color: #ffc300;
+}
+main article {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  overflow: hidden;
+  background: #ffd60a;
+}
+main article section {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+main article section h3 {
+  font-size: 20px;
+  color: black;
+  margin-bottom: 10px;
+}
+main article section p {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  color: black;
+  line-height: 1.6;
+  font-size: 18px;
+}
+main article section .titlecolor {
+  color: #ffc300;
+}
+main article section .important {
+  color: #c1121f;
+}
+
+.banner {
+  background-color: white;
+  position: relative;
+  text-align: center;
+}
+.banner .banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.banner h2,
+.banner p {
+  color: black;
+  font-size: 24px;
+  text-align: center;
+  text-shadow: 2px 2px white;
+  max-width: 80%;
+  margin-right: 300px;
+}
+
+@media only screen and (max-width: 767px) {
+  header nav {
+    height: auto;
+    padding: 10px 0;
+    flex-direction: column;
+    align-items: center;
+  }
+  header .logo {
+    margin-bottom: 10px;
+  }
+  header ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  header ul li {
+    width: 100%;
+    text-align: center;
+  }
+  main .profiel {
+    background-image: url(Image/thunder.png);
+  }
+  main .profiel .bruceleeprofiel {
+    height: 200px;
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  main .profiel .content h1 {
+    font-size: 20px;
+  }
+  main .profiel .content p {
+    font-size: 14px;
+  }
+  .banner h2,
+  .banner p {
+    color: black;
+    font-size: 24px;
+    text-align: center;
+    text-shadow: 2px 2px white;
+    max-width: 80%;
+    margin-right: 300px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  header nav {
+    padding: 15px 0;
+  }
+  main .profiel {
+    background-size: cover;
+  }
+  main .profiel .bruceleeprofiel {
+    height: 250px;
+    width: 250px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  header nav {
+    padding: 20px 0;
+  }
+  main .profiel {
+    background-size: cover;
+  }
+  main article, main .profiel p {
+    width: 50%;
+  }
+}
+
+/*# sourceMappingURL=hoofdpagina.css.map */

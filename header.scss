@@ -1,0 +1,49 @@
+header {
+  nav {
+    @if $website-style == "dark" {
+      background-color: $dark-mode;
+    } @else if $website-style == "light" {
+      background-color: $light-mode;
+    } @else {
+      background-color: $secondary-color;
+    }
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    height: 50px;
+            border-top: solid 10px $tertiary-color;
+            border-right: solid 0px $tertiary-color;
+            border-bottom: solid 10px $tertiary-color;
+            border-left: solid 0px $tertiary-color;
+    .logo {
+      img {
+        max-width: 100px;
+        height: auto;
+        vertical-align: middle;
+      }
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0 auto;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+
+      li {
+        a {
+          display: block;
+          color: $text-color;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+
+          &:hover {
+            background-color: $tertiary-color;
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+  }
+}

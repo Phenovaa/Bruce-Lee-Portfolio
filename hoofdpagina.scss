@@ -1,0 +1,321 @@
+// Importeer variabelen
+@import "variabelen.scss";
+@import "header.scss";
+@import "footer.scss";
+
+// Basisstijlen
+body {
+  margin: 0;
+  font-family: $protest-riot;
+  color: $text-color;
+  background-color: $primary-color; // Achtergrond van het artikel
+
+  .mini-nav {
+    height: 25px;
+    width: 100%;
+
+    p {
+      margin: 10px;
+      padding: 0;
+    }
+  }
+
+  // Media queries voor responsiviteit van de navigatiebalk
+  @media only screen and (max-width: 767px) {
+    header nav {
+      height: auto;
+      padding: 10px 0;
+      flex-direction: column;
+      align-items: center;
+
+      .logo {
+        margin-bottom: 10px;
+      }
+
+      ul {
+        flex-direction: column;
+        align-items: center;
+
+        li {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    header nav {
+      padding: 15px 0;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    header nav {
+      padding: 20px 0;
+
+      ul {
+        justify-content: flex-end;
+      }
+    }
+  }
+}
+
+// Stijlen voor hoofdinhoud
+main {
+  // Stel lettergrootte van bruce-lee-name h1 in op 32 pixels
+  .profiel .content .bruce-lee-name {
+    font-size: $h1;
+  }
+
+  .profiel {
+    // Voorwaardelijke achtergrondkleur voor profiel
+    @if $website-style == "dark" {
+      background-color: $dark-mode;
+    } @else if $website-style == "light" {
+      background-color: $light-mode;
+    } @else {
+      background-color: $primary-color; // Standaardstijl
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+    background-image: url(Image/thunder.png);
+    background-size: cover;
+
+    .bruceleeprofiel {
+      border-radius: 50%;
+      height: 250px;
+      width: 250px;
+      margin-top: 20px;
+      margin-right: 0;
+      margin-bottom: 20px;
+      border: solid 10px transparent; // Stel initieel randkleur in als transparant
+      position: relative;
+      overflow: hidden; // Zorg ervoor dat overflow verborgen is om de overstroomde geanimeerde rand te verbergen
+      animation: pulseBorder 1.5s infinite alternate; // Pas animatie toe op de rand
+
+      // Definieer keyframe-animatie voor de randkleur
+      @keyframes pulseBorder {
+        0% {
+          border-color: transparent; // Begin met transparante rand
+        }
+        100% {
+          border-color: $secondary-color; // Eindig met de gewenste randkleur
+        }
+      }
+    }
+
+    .content {
+      text-align: center;
+
+      h1,
+      p {
+        margin: 0;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 20px;
+        line-height: $line-height;
+        text-shadow: 2px 2px $secondary-color;
+        font-size: $base-font-size;
+      }
+
+      button {
+        margin: 5px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        background-color: $secondary-color;
+        width: 150px;
+        color: $text-color;
+        border-color: 10px solid $quinary-color;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 5px;
+        font-family: $protest-riot;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $tertiary-color;
+        }
+      }
+    }
+  }
+
+  // De banner van Bruce Lee staat op regel 187
+  article {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    overflow: hidden;
+    background: $primary-color;
+
+    section {
+      // Voorwaardelijke achtergrondkleur voor secties
+      @if $website-style == "dark" {
+        background-color: $dark-mode;
+      } @else if $website-style == "light" {
+        background-color: $light-mode;
+      } @else {
+        background-color: $secondary-color; // Standaardstijl
+      }
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: $border-radius;
+
+      h3 {
+        font-size: $h3;
+        color: $text-color;
+        margin-bottom: 10px;
+      }
+
+      p {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 20px;
+        color: $text-color;
+        line-height: $line-height;
+        font-size: $base-font-size;
+      }
+
+      // @each lus binnen .flex-item
+      @each $name, $color in $colors {
+        .#{$name} {
+          color: $color;
+        }
+      }
+    }
+  }
+}
+
+// Mixin voor bannertekst
+@mixin banner-text {
+  color: $text-color;
+  font-size: 24px;
+  text-align: center;
+  text-shadow: 2px 2px $secondary-color; // Optioneel: voeg tekstschaduw toe
+}
+
+// Pas mixin toe op titel en alinea binnen bannergedeelte
+.banner {
+  // Voorwaardelijke achtergrondkleur voor banner
+  @if $website-style == "dark" {
+    background-color: $dark-mode;
+  } @else if $website-style == "light" {
+    background-color: $light-mode;
+  } @else {
+    background-color: $secondary-color; // Standaardstijl
+  }
+  position: relative;
+  text-align: center;
+
+  .banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; // Zorg ervoor dat tekst boven op de afbeelding wordt weergegeven
+  }
+
+  h2,
+  p {
+    @include banner-text; // Pas mixin toe op titel en alinea
+    max-width: 80%; // Voorbeeld: beperk maximale breedte van titel en alinea
+    margin-right: 300px; // Voorbeeld: voeg ruimte toe boven de titel en alinea
+  }
+}
+
+// Mediaqueries
+@media only screen and (max-width: 767px) {
+  // Stijlen voor smartphones
+  header nav {
+    height: auto;
+    padding: 10px 0;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header .logo {
+    margin-bottom: 10px;
+  }
+
+  header ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  main .profiel {
+    background-image: url(Image/thunder.png);
+  }
+
+  main .profiel .bruceleeprofiel {
+    height: 200px;
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  main .profiel .content h1 {
+    font-size: 20px;
+  }
+
+  main .profiel .content p {
+    font-size: 14px;
+  }
+
+  .banner {
+    h2,
+    p {
+      @include banner-text; // Pas mixin toe op titel en alinea
+      max-width: 80%; // Voorbeeld: beperk maximale breedte van titel en alinea
+      margin-right: 300px; // Voorbeeld: voeg ruimte toe boven de titel en alinea
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  // Stijlen voor tablets
+  header nav {
+    padding: 15px 0;
+  }
+
+  main .profiel {
+    background-size: cover;
+  }
+
+  main .profiel .bruceleeprofiel {
+    height: 250px;
+    width: 250px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  // Stijlen voor desktops/laptops
+  header nav {
+    padding: 20px 0;
+  }
+
+  main .profiel {
+    background-size: cover;
+  }
+
+  %shared-width {
+    width: 50%;
+  }
+
+  main .profiel p {
+    @extend %shared-width;
+  }
+
+  main article {
+    @extend %shared-width;
+  }
+}

@@ -1,0 +1,103 @@
+// Import variabelen en andere SCSS-bestanden
+@import "variabelen.scss";
+@import "header.scss";
+@import "footer.scss";
+
+// Basic styles
+body {
+  margin: 0;
+  font-family: $protest-riot;
+  color: $text-color;
+  background-color: $primary-color;
+
+  .mini-nav {
+    height: 25px;
+    width: 100%;
+
+    p {
+      margin: 10px;
+      padding: 0;
+      line-height: $line-height;
+    }
+  }
+
+  // Media queries voor de responsiviteit van de navigatiebalk
+  @media only screen and (max-width: 767px) {
+    header nav {
+      height: auto;
+      padding: 10px 0;
+      flex-direction: column;
+      align-items: center;
+
+      .logo {
+        margin-bottom: 10px;
+      }
+
+      ul {
+        flex-direction: column;
+        align-items: center;
+
+        li {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+
+    main .flex-container {
+      flex-direction: column; // Verander naar column voor smartphones
+    }
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    header nav {
+      padding: 15px 0;
+    }
+
+    main .flex-container {
+      flex-direction: column; // Verander naar column voor tablets
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    header nav {
+      padding: 20px 0;
+
+      ul {
+        justify-content: flex-end;
+      }
+    }
+  }
+}
+
+// Hoofdinhoud
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Horizontaal centreren van inhoud */
+  justify-content: center; /* Verticaal centreren van inhoud */
+  margin: 20px; /* Verklein de marge */
+
+  // Stijl voor contactinfo, opleidingen en werkervaring
+  .contact-info,
+  .opleidingen,
+  .werkervaring {
+    width: 50%; /* Verklein de breedte */
+    margin-bottom: 30px; /* Verklein de ruimte tussen secties */
+    margin-top: 50px;
+    padding: 20px; /* Voeg wat ruimte binnen de sectie toe */
+    text-align: center; /* Centreren van de inhoud binnen secties */
+    background-color: $secondary-color; /* Achtergrondkleur instellen */
+    border-radius: $border-radius;
+    
+    // Verwijderen van lijstpuntjes
+    ul {
+      list-style-type: none;
+      padding: 0; /* Standaard padding verwijderen */
+    }
+  }
+}
+
+footer {
+  margin-top: 50px;
+}

@@ -1,0 +1,213 @@
+header nav {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  height: 50px;
+  border-top: solid 10px #ffc300;
+  border-right: solid 0px #ffc300;
+  border-bottom: solid 10px #ffc300;
+  border-left: solid 0px #ffc300;
+}
+header nav .logo img {
+  max-width: 100px;
+  height: auto;
+  vertical-align: middle;
+}
+header nav ul {
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+header nav ul li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+header nav ul li a:hover {
+  background-color: #ffc300;
+  border-radius: 10px;
+}
+
+footer {
+  background-color: #001427;
+  color: white;
+  padding: 5px;
+  text-align: center;
+}
+footer p {
+  font-size: 14px;
+}
+
+body {
+  margin: 0;
+  font-family: "Protest Riot", sans-serif;
+  color: black;
+  background-color: #ffd60a;
+}
+body .mini-nav {
+  height: 25px;
+  width: 100%;
+}
+body .mini-nav p {
+  margin: 10px;
+  padding: 0;
+}
+@media only screen and (max-width: 767px) {
+  body header nav {
+    height: auto;
+    padding: 10px 0;
+    flex-direction: column;
+    align-items: center;
+  }
+  body header nav .logo {
+    margin-bottom: 10px;
+  }
+  body header nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  body header nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  body header nav {
+    padding: 15px 0;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  body header nav {
+    padding: 20px 0;
+  }
+  body header nav ul {
+    justify-content: flex-end;
+  }
+}
+
+main .grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  margin: 10px auto;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 30px;
+  background: #dbb42c;
+  overflow: hidden;
+  background-color: #ffd60a;
+  background-color: #ffd60a;
+  background-color: #ffd60a;
+  background-color: #ffd60a;
+  background-color: #ffd60a;
+  background-color: #ffd60a;
+  background-color: #ffd60a;
+  background-color: #ffd60a;
+  background-color: #ffd60a;
+}
+main .grid-container .grid-item:nth-child(1) {
+  border: 10px solid #ff7b00;
+  animation: animateBorder 10s infinite alternate;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .grid-container .grid-item:nth-child(2) {
+  border: 10px solid #ffa200;
+  animation: animateBorder 10s infinite alternate;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .grid-container .grid-item:nth-child(3) {
+  border: 10px solid #ffd000;
+  animation: animateBorder 10s infinite alternate;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .grid-container .grid-item:nth-child(4) {
+  border: 10px solid #ffea00;
+  animation: animateBorder 10s infinite alternate;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .grid-container .grid-item:nth-child(5) {
+  border: 10px solid #ff7b00;
+  animation: animateBorder 10s infinite alternate;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .grid-container .grid-item:nth-child(6) {
+  border: 10px solid #ffa200;
+  animation: animateBorder 10s infinite alternate;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .grid-container .grid-item:nth-child(7) {
+  border: 10px solid #ffd000;
+  animation: animateBorder 10s infinite alternate;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .grid-container .grid-item:nth-child(8) {
+  border: 10px solid #ffea00;
+  animation: animateBorder 10s infinite alternate;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .grid-container .grid-item:nth-child(9) {
+  border: 10px solid #ff7b00;
+  animation: animateBorder 10s infinite alternate;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (max-width: 767px) {
+  main .grid-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  main .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  main .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@keyframes animateBorder {
+  0% {
+    border-color: #ff7b00;
+  }
+  25% {
+    border-color: #ffa200;
+  }
+  50% {
+    border-color: #ffd000;
+  }
+  75% {
+    border-color: #ffea00;
+  }
+  100% {
+    border-color: #ff7b00;
+  }
+}
+h2 {
+  text-align: center;
+}
+
+/*# sourceMappingURL=album.css.map */

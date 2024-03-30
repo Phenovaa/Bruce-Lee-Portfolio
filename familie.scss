@@ -1,0 +1,128 @@
+// Importeer variabelen
+@import "variabelen.scss";
+@import "header.scss";
+@import "footer.scss";
+
+// Basisstijlen
+body {
+  margin: 0;
+  font-family: $protest-riot;
+  color: $text-color;
+  background-color: $primary-color;
+
+  .mini-nav {
+    height: 25px;
+    width: 100%;
+
+    p {
+      margin: 10px;
+      padding: 0;
+    }
+  }
+
+  // Media queries voor responsiviteit van de navigatiebalk
+  @media only screen and (max-width: 767px) {
+    header nav {
+      height: auto;
+      padding: 10px 0;
+      flex-direction: column;
+      align-items: center;
+
+      .logo {
+        margin-bottom: 10px;
+      }
+
+      ul {
+        flex-direction: column;
+        align-items: center;
+
+        li {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+
+    main .flex-container {
+      flex-direction: column; // Verander naar kolom voor smartphones
+    }
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    header nav {
+      padding: 15px 0;
+    }
+
+    main .flex-container {
+      flex-direction: column; // Verander naar kolom voor tablets
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    header nav {
+      padding: 20px 0;
+
+      ul {
+        justify-content: flex-end;
+      }
+    }
+  }
+}
+
+main {
+  @if $website-style == "dark" {
+    background-color: $dark-mode;
+  } @else if $website-style == "light" {
+    background-color: $light-mode;
+  } @else {
+    background-color: $primary-color; // Standaardstijl
+  }
+  display: flex;
+  justify-content: center; // Centreer de inhoud horizontaal
+  align-items: center; // Centreer de inhoud verticaal
+
+  .flex-container {
+    display: flex;
+    flex-direction: row; // Rangschik items horizontaal
+    gap: 20px; // Pas de ruimte tussen items aan
+    padding: 20px; // Voeg vulling toe voor betere spatiëring
+
+    .flex-item {
+      display: flex;
+      flex-direction: column; // Rangschik inhoud verticaal binnen elk flex-item
+      border-radius: $border-radius; // Voeg border-radius toe aan elk flex-item
+      padding: 10px; // Voeg vulling toe aan elk flex-item
+      background-color: $secondary-color; // Stel de achtergrondkleur in op wit
+
+      h2 {
+        font-size: $h2; // Voorbeeldlettergrootte voor titel
+        margin-bottom: 10px; // Voorbeeldmarge onderaan voor titel
+      }
+
+      p {
+        font-size: $base-font-size;
+        padding: 10px;
+        border-top: 1px solid $text-color; // Voeg bovenste rand toe om titel en alinea te scheiden
+        max-width: 400px; // Voorbeeld maximale breedte voor alinea's
+        list-style: $line-height;
+      }
+
+      // @each lus binnen .flex-item
+      @each $name, $color in $colors {
+        .#{$name} {
+          color: $color;
+        }
+      }
+    }
+  }
+}
+
+main-image-banner {
+  .bruceleefamily {
+    margin-bottom: 30px;
+    width: 100%;
+    height: 700px; // Zorg ervoor dat de afbeeldingshoogte proportioneel aanpast
+    max-width: 100%; // Zorg ervoor dat de afbeeldingsbreedte de containerbreedte niet overschrijdt
+    background-size: cover;
+  }
+}

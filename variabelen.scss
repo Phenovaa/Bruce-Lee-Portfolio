@@ -1,0 +1,39 @@
+// Hoofdkleur van de website
+$primary-color: #ffd60a; // Primaire kleur
+$secondary-color: #ffff; // Secundaire kleur
+$tertiary-color: #ffc300; // Tertiaire kleur
+$quaternary-color: #0000; // Quartaire kleur
+$quinary-color: #001427; // Quintaire kleur
+$senary-color: #dbb42c; // Senaire kleur
+$qoute-color: #895737; // Citaatkleur
+
+// Belangrijke tekstkleur
+$colors: (
+    titlecolor: #ffc300, // Titelkleur
+    important: #c1121f, // Belangrijke kleur
+);
+
+// Lettertype van de website
+$h1: 38px; // Grootte van H1
+$h2: 24px; // Grootte van H2
+$h3: 20px; // Grootte van H3
+$quote-font-size: 24px; // Grootte van citaat
+$protest-riot: "Protest Riot", sans-serif; // Lettertype
+$base-font-size: 9px * 2; // Berekening van basislettergrootte (SCSS-bewerking)
+$line-height: 0.8 * 2; // Regelhoogte (SCSS-bewerking)
+$text-color: black; // Tekstkleur
+
+// Rand
+$border-radius: 20px; // Randradius
+$border-color: red; // Randkleur
+
+// Type "dark", "light" of "default" voor testen
+$website-style: "default"; // Websitestijl
+
+// Donkere en lichte kleuren
+$dark-mode: #938200; // Donkere modus kleur
+$light-mode: lightyellow; // Lichtmodus kleur
+
+// Loop voor het aanpassen van de randkleur en animatie van de grid-items
+$border-colors: #ff7b00, #ffa200, #ffd000, #ffea00, #ff7b00, #ffa200, #ffd000, #ffea00, #ff7b00; // Lijst met randkleuren
+$animation-duration: 10s; // Duur van de animatie in seconden
